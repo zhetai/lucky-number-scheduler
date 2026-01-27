@@ -1,0 +1,23 @@
+name: Trigger LuckyNumber Daily Pipeline
+
+on:
+  schedule:
+    - cron: '5 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger private repository workflow
+        run: |
+          gh api \
+            --method POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            repos/zhetai/LuckyNumber/actions/workflows/daily_pipeline.yml/dispatches \
+            -f ref=main
+        env:
+          GH_TOKEN: ${{ secrets.PAT_FOR_PRIVATE_REPO }}
