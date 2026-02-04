@@ -44,7 +44,7 @@ jobs:
           curl -X POST \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token $TOKEN" \
-            https://api.github.com/repos/zhetai/LuckyNumber/actions/workflows/process-weather-request.yml/dispatches \
+            https://api.github.com/repos/zhetai/LuckyNumber/actions/workflows/daily-weather-shorts.yml/dispatches \
             -d '{"ref":"main"}'
 
   trigger-trendviz:
