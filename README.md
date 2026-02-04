@@ -11,6 +11,9 @@ GitHub Actions scheduled workflows don't reliably run on private repositories. T
 ### Automated Schedule
 
 - **Theather (Weather Video)**: Daily at UTC 17:00
+- **TrendViz**: Daily at UTC 10:00 and 18:00
+- **AI Insight**: Daily at UTC 00:15
+- **Daily Short Videos**: Daily at UTC 00:05
 
 ### Manual Trigger
 
@@ -25,7 +28,7 @@ You can manually trigger any workflow from the Actions tab with the following op
 
 1. Create a Personal Access Token (PAT) with `repo` scope at https://github.com/settings/tokens
 2. Add the PAT as a repository secret named `PAT_FOR_PRIVATE_REPO` in this repository's Settings → Secrets and variables → Actions
-3. The workflow will automatically run daily at the scheduled time
+3. The workflow will automatically run daily at the scheduled times
 
 ## Workflows Triggered
 

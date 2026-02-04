@@ -4,6 +4,13 @@ on:
   schedule:
     # Trigger Theather (Weather Video) at 17:00 UTC
     - cron: '0 17 * * *'
+    # Trigger TrendViz at 10:00 UTC and 18:00 UTC
+    - cron: '0 10 * * *'
+    - cron: '0 18 * * *'
+    # Trigger 3D AI Insight at 00:15 UTC
+    - cron: '15 0 * * *'
+    # Trigger Daily Short Videos at 00:05 UTC
+    - cron: '5 0 * * *'
   workflow_dispatch:
     inputs:
       workflow:
