@@ -30,7 +30,7 @@ permissions:
 
 jobs:
   trigger-theather:
-    if: github.event.inputs.workflow == 'theather' || github.event.inputs.workflow == 'all' || github.event.inputs.workflow == ''
+    if: (github.event_name == 'schedule' && github.event.schedule == '0 13 * * *') || github.event.inputs.workflow == 'theather' || github.event.inputs.workflow == 'all' || github.event.inputs.workflow == ''
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Theather (Weather Video) pipeline
@@ -48,7 +48,7 @@ jobs:
             -d '{"ref":"main"}'
 
   trigger-trendviz:
-    if: github.event.inputs.workflow == 'trendviz' || github.event.inputs.workflow == 'all'
+    if: (github.event_name == 'schedule' && github.event.schedule == '0 21 * * *') || github.event.inputs.workflow == 'trendviz' || github.event.inputs.workflow == 'all'
     runs-on: ubuntu-latest
     steps:
       - name: Trigger TrendViz pipeline
@@ -66,7 +66,7 @@ jobs:
             -d '{"ref":"main"}'
 
   trigger-streetgauss:
-    if: github.event.inputs.workflow == 'streetgauss' || github.event.inputs.workflow == 'all'
+    if: (github.event_name == 'schedule' && github.event.schedule == '0 19 * * *') || github.event.inputs.workflow == 'streetgauss' || github.event.inputs.workflow == 'all'
     runs-on: ubuntu-latest
     steps:
       - name: Trigger StreetGauss pipeline
@@ -84,7 +84,7 @@ jobs:
             -d '{"ref":"main"}'
 
   trigger-ai-insight:
-    if: github.event.inputs.workflow == 'ai-insight' || github.event.inputs.workflow == 'all'
+    if: (github.event_name == 'schedule' && github.event.schedule == '15 0 * * *') || github.event.inputs.workflow == 'ai-insight' || github.event.inputs.workflow == 'all'
     runs-on: ubuntu-latest
     steps:
       - name: Trigger 3D AI Insight pipeline
