@@ -2,17 +2,14 @@ name: Trigger LuckyNumber Workflows
 
 on:
   schedule:
-    # Trigger Theather (Weather Video) at 17:00 UTC
-    - cron: '0 17 * * *'
-    # Trigger TrendViz at 10:00 UTC and 18:00 UTC
-    - cron: '0 10 * * *'
-    - cron: '0 18 * * *'
+    # Trigger Theather (Weather Video) at 13:00 UTC
+    - cron: '0 13 * * *'
+    # Trigger TrendViz at 21:00 UTC
+    - cron: '0 21 * * *'
     # Trigger StreetGauss at 19:00 UTC
     - cron: '0 19 * * *'
     # Trigger 3D AI Insight at 00:15 UTC
     - cron: '15 0 * * *'
-    # Trigger Daily Short Videos at 00:05 UTC
-    - cron: '5 0 * * *'
   workflow_dispatch:
     inputs:
       workflow:
